@@ -1,0 +1,1403 @@
+# Copyright (C) 2026 FlexaTech
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Flexa MailBridge 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flexa-mailbridge\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-14T09:10:13+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: flexa-mailbridge\n"
+
+#. Plugin Name of the plugin
+#: flexa-mailbridge.php
+#: src/Admin/Menu.php:43
+#: src/Admin/Menu.php:44
+#: i18n/extracted-strings.js:89
+msgid "Flexa MailBridge"
+msgstr ""
+
+#. Description of the plugin
+#: flexa-mailbridge.php
+msgid "WP Mail SMTP with email logs, open/click tracking, and reports."
+msgstr ""
+
+#. Author of the plugin
+#: flexa-mailbridge.php
+msgid "FlexaTech"
+msgstr ""
+
+#: flexa-mailbridge.php:24
+msgid "Flexa MailBridge requires PHP 8.2 or higher. The plugin has been disabled."
+msgstr ""
+
+#: src/Admin/DashboardWidget.php:31
+msgid "Flexa MailBridge — Last 30 Days"
+msgstr ""
+
+#: src/Admin/DashboardWidget.php:40
+#: src/Reports/Digest.php:76
+#: i18n/extracted-strings.js:20
+#: i18n/extracted-strings.js:117
+#: i18n/extracted-strings.js:148
+#: i18n/extracted-strings.js:221
+#: i18n/extracted-strings.js:224
+msgid "Sent"
+msgstr ""
+
+#: src/Admin/DashboardWidget.php:41
+#: src/Reports/Digest.php:77
+#: i18n/extracted-strings.js:21
+#: i18n/extracted-strings.js:116
+#: i18n/extracted-strings.js:149
+#: i18n/extracted-strings.js:203
+#: i18n/extracted-strings.js:225
+msgid "Failed"
+msgstr ""
+
+#: src/Admin/DashboardWidget.php:42
+#: src/Reports/Digest.php:78
+#: i18n/extracted-strings.js:222
+#: i18n/extracted-strings.js:226
+msgid "Opens"
+msgstr ""
+
+#: src/Admin/DashboardWidget.php:43
+#: src/Reports/Digest.php:79
+#: i18n/extracted-strings.js:223
+#: i18n/extracted-strings.js:227
+msgid "Clicks"
+msgstr ""
+
+#: src/Admin/DashboardWidget.php:44
+#: src/Reports/Digest.php:80
+#: i18n/extracted-strings.js:228
+msgid "Open rate"
+msgstr ""
+
+#: src/Admin/DashboardWidget.php:45
+#: src/Reports/Digest.php:81
+#: i18n/extracted-strings.js:229
+msgid "Click rate"
+msgstr ""
+
+#: src/Admin/DashboardWidget.php:61
+msgid "View full reports →"
+msgstr ""
+
+#: src/Admin/ImportNotice.php:64
+msgid "Flexa MailBridge: import your existing configuration"
+msgstr ""
+
+#. translators: %s: comma-separated list of detected plugin names.
+#: src/Admin/ImportNotice.php:68
+msgid "We detected settings from: %s. You can import them (and their email logs) into Flexa MailBridge."
+msgstr ""
+
+#: src/Admin/ImportNotice.php:73
+msgid "Go to Import"
+msgstr ""
+
+#: src/Admin/ImportNotice.php:75
+msgid "Dismiss"
+msgstr ""
+
+#: src/Admin/Menu.php:33
+#: i18n/extracted-strings.js:91
+msgid "Settings"
+msgstr ""
+
+#: src/Api/DiagnosticsEndpoint.php:52
+#: src/Api/LogsEndpoint.php:108
+msgid "Log entry not found."
+msgstr ""
+
+#: src/Api/DiagnosticsEndpoint.php:63
+msgid "This email did not fail, so there is nothing to diagnose."
+msgstr ""
+
+#: src/Api/Endpoint.php:27
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: src/Api/Endpoint.php:39
+msgid "You do not have permission to update settings."
+msgstr ""
+
+#: src/Api/ImportEndpoint.php:88
+msgid "No importable data was found for the selected plugin."
+msgstr ""
+
+#: src/Api/OAuthEndpoint.php:181
+msgid "The OAuth state could not be verified."
+msgstr ""
+
+#. translators: %s: mailer slug.
+#: src/Api/OAuthEndpoint.php:207
+msgid "\"%s\" is not an OAuth mailer."
+msgstr ""
+
+#: src/Api/ReportsEndpoint.php:72
+msgid "test"
+msgstr ""
+
+#: src/Api/TestMailEndpoint.php:59
+msgid "A valid recipient email address is required."
+msgstr ""
+
+#. translators: %s: site name.
+#: src/Api/TestMailEndpoint.php:69
+msgid "Flexa MailBridge test email from %s"
+msgstr ""
+
+#: src/Api/TestMailEndpoint.php:76
+#: src/Api/TestMailEndpoint.php:77
+msgid "This is a Flexa MailBridge test email. If you received it, your mailer is configured correctly."
+msgstr ""
+
+#: src/Api/TestMailEndpoint.php:104
+msgid "The test email could not be sent."
+msgstr ""
+
+#: src/Api/TrackingEndpoint.php:130
+msgid "Invalid tracking token."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:130
+msgid "The mail provider rejected the login. The username, password, or API key is wrong or no longer valid."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:131
+msgid "Your site could not open a connection to the mail server. This is often a temporary network issue or a blocked port."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:132
+msgid "The mail server did not respond in time. The message may or may not have been accepted, so it was not resent automatically."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:133
+msgid "The secure (TLS/SSL) connection to the mail server could not be established. The encryption setting or the server certificate may be the cause."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:134
+msgid "The mail server hostname could not be resolved. The host name may be misspelled or DNS is temporarily unavailable."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:135
+msgid "The provider is throttling your account because too many messages were sent in a short time."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:136
+msgid "The provider accepted the connection but refused this message, often due to reputation, content, or policy rules."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:137
+msgid "The recipient address was rejected as invalid or non-existent."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:138
+msgid "The request was rejected because of a configuration problem, such as an unverified sending domain or an invalid From address."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:139
+msgid "The provider reported a temporary problem on its side. This usually clears up on its own."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:140
+msgid "The message could not be sent and the failure did not match a known pattern."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:146
+msgid "Re-enter the SMTP/API credentials. Some providers require an app-specific password or a freshly generated API key."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:147
+msgid "Check that the host and port are correct and that your host allows outbound connections on that port. Try again shortly."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:148
+msgid "Check with the provider before resending to avoid a duplicate, then retry. Consider a different port or provider if it recurs."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:149
+msgid "Verify the encryption setting (SSL vs TLS) matches the port, and that the server certificate is valid."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:150
+msgid "Double-check the mail server hostname for typos. If it is correct, wait and try again."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:151
+msgid "Slow down sending or upgrade your provider plan. The message can be retried after the limit resets."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:152
+msgid "Review the provider response for the specific reason, and check your domain reputation and message content."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:153
+msgid "Confirm the recipient address is correct. Do not keep resending to an invalid address."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:154
+msgid "Verify your sending domain with the provider and make sure the From address uses a verified domain."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:155
+msgid "No action needed. The message can be retried; the provider issue should resolve shortly."
+msgstr ""
+
+#: src/Diagnostics/Diagnostics.php:156
+msgid "Review the technical details below, and check the provider dashboard for more information."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:30
+msgid "Sending domain DNS"
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:41
+msgid "No public sending domain to check."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:47
+msgid "DNS lookups are disabled on this server."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:65
+msgid "An SPF record is published for the sending domain."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:75
+msgid "No SPF record was found for the sending domain. Messages are more likely to be marked as spam."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:76
+msgid "Publish an SPF (TXT) record that authorises your provider to send for this domain."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:88
+msgid "A DMARC record is published for the sending domain."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:98
+msgid "No DMARC record was found for the sending domain."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:99
+msgid "Publish a DMARC (TXT) record at _dmarc.yourdomain to tell receivers how to handle unauthenticated mail."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:108
+msgid "DKIM uses a provider-specific selector that cannot be detected automatically."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:109
+msgid "Confirm DKIM is set up and passing in your email provider dashboard."
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:166
+msgid "SPF record"
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:167
+msgid "DMARC record"
+msgstr ""
+
+#: src/Health/Checks/DnsCheck.php:168
+msgid "DKIM"
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:30
+msgid "WordPress & sending setup"
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:54
+#: src/Health/Checks/EnvironmentCheck.php:66
+#: src/Health/Checks/EnvironmentCheck.php:78
+#: src/Health/Checks/EnvironmentCheck.php:89
+msgid "Active mailer"
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:56
+msgid "WordPress is using the built-in PHP mail() function. Delivery and deliverability are unreliable without an SMTP or API provider."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:57
+msgid "Choose and configure an SMTP or API mailer on the settings screen."
+msgstr ""
+
+#. translators: %s: mailer slug.
+#: src/Health/Checks/EnvironmentCheck.php:69
+#: src/Health/Checks/TransportCheck.php:138
+msgid "The selected mailer \"%s\" is not available."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:70
+#: src/Health/Checks/TransportCheck.php:139
+msgid "Select an available mailer on the settings screen."
+msgstr ""
+
+#. translators: %s: mailer slug.
+#: src/Health/Checks/EnvironmentCheck.php:81
+msgid "The selected mailer \"%s\" is missing required credentials."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:82
+msgid "Complete the credentials for this mailer on the settings screen."
+msgstr ""
+
+#. translators: %s: mailer slug.
+#: src/Health/Checks/EnvironmentCheck.php:92
+msgid "The \"%s\" mailer is selected and configured."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:104
+#: src/Health/Checks/EnvironmentCheck.php:114
+#: src/Health/Checks/EnvironmentCheck.php:123
+msgid "From address"
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:106
+msgid "No From address is configured, so WordPress uses its default wordpress@yourdomain address, which many providers reject or mark as spam."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:107
+msgid "Set a From address on a domain you can authenticate."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:116
+msgid "The configured From address is not a valid email address."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:117
+msgid "Correct the From address on the settings screen."
+msgstr ""
+
+#. translators: %s: configured From email address.
+#: src/Health/Checks/EnvironmentCheck.php:126
+msgid "From address is set to %s."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:136
+#: src/Health/Checks/EnvironmentCheck.php:145
+msgid "Delivery mode"
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:138
+msgid "Development mode is on: messages are logged but not actually sent."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:139
+msgid "Turn off \"Disable email delivery\" when you want real emails to go out."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:147
+msgid "Email delivery is enabled."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:155
+#: src/Health/Checks/EnvironmentCheck.php:167
+#: src/Health/Checks/EnvironmentCheck.php:179
+#: src/Health/Checks/EnvironmentCheck.php:189
+msgid "wp_mail() ownership"
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:157
+#: src/Health/Checks/EnvironmentCheck.php:169
+msgid "Could not determine which code defines wp_mail()."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:181
+msgid "Another plugin has overridden wp_mail(), so Flexa MailBridge may not control how mail is sent."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:182
+msgid "Deactivate the other mail plugin that redefines wp_mail() to avoid conflicts."
+msgstr ""
+
+#: src/Health/Checks/EnvironmentCheck.php:191
+msgid "wp_mail() is provided by WordPress core, so Flexa MailBridge controls delivery."
+msgstr ""
+
+#: src/Health/Checks/TransportCheck.php:34
+msgid "Provider connectivity"
+msgstr ""
+
+#: src/Health/Checks/TransportCheck.php:51
+msgid "PHP mail() hands off to the local mail server, so there is no SMTP or API endpoint to test here."
+msgstr ""
+
+#: src/Health/Checks/TransportCheck.php:74
+msgid "No SMTP host and port are configured."
+msgstr ""
+
+#: src/Health/Checks/TransportCheck.php:75
+msgid "Enter the SMTP host and port on the settings screen."
+msgstr ""
+
+#: src/Health/Checks/TransportCheck.php:84
+msgid "The server has disabled the socket functions needed to test the connection."
+msgstr ""
+
+#. translators: 1: host, 2: port.
+#: src/Health/Checks/TransportCheck.php:103
+msgid "Could not connect to %1$s on port %2$d."
+msgstr ""
+
+#: src/Health/Checks/TransportCheck.php:104
+msgid "Check the host and port, and confirm your server allows outbound connections on that port."
+msgstr ""
+
+#. translators: 1: host, 2: port.
+#: src/Health/Checks/TransportCheck.php:121
+msgid "Connected to %1$s on port %2$d."
+msgstr ""
+
+#. translators: %s: mailer slug.
+#: src/Health/Checks/TransportCheck.php:149
+msgid "The \"%s\" mailer is missing required credentials."
+msgstr ""
+
+#: src/Health/Checks/TransportCheck.php:150
+msgid "Complete the credentials for this mailer, then send a test email to confirm delivery."
+msgstr ""
+
+#. translators: %s: mailer slug.
+#: src/Health/Checks/TransportCheck.php:159
+msgid "The \"%s\" mailer has credentials configured. Use \"Send test email\" to confirm live delivery."
+msgstr ""
+
+#: src/Logging/MailLogger.php:204
+msgid "Skipped: an identical message was already queued."
+msgstr ""
+
+#: src/Logging/MailLogger.php:233
+msgid "The message could not be sent."
+msgstr ""
+
+#: src/Queue/Queue.php:368
+msgid "Every Fifteen Minutes (Flexa MailBridge)"
+msgstr ""
+
+#. translators: 1: site name, 2: period label e.g. "weekly".
+#: src/Reports/Digest.php:32
+msgid "[%1$s] Your %2$s email report"
+msgstr ""
+
+#. translators: 1: period label, 2: from date, 3: to date.
+#: src/Reports/Digest.php:104
+msgid "Your %1$s email report (%2$s – %3$s)"
+msgstr ""
+
+#: src/Reports/Digest.php:119
+#: i18n/extracted-strings.js:233
+msgid "Top links"
+msgstr ""
+
+#: src/Reports/Scheduler.php:43
+msgid "Once Monthly (Flexa MailBridge)"
+msgstr ""
+
+#: src/Reports/Scheduler.php:70
+msgid "weekly"
+msgstr ""
+
+#: src/Reports/Scheduler.php:76
+msgid "monthly"
+msgstr ""
+
+#: templates/admin-app.php:15
+msgid "Flexa MailBridge requires JavaScript to be enabled."
+msgstr ""
+
+#: i18n/extracted-strings.js:2
+msgid "Passed"
+msgstr ""
+
+#: i18n/extracted-strings.js:3
+msgid "Needs attention"
+msgstr ""
+
+#: i18n/extracted-strings.js:4
+msgid "Problem found"
+msgstr ""
+
+#: i18n/extracted-strings.js:5
+msgid "Not applicable"
+msgstr ""
+
+#: i18n/extracted-strings.js:6
+msgid "Not checked"
+msgstr ""
+
+#: i18n/extracted-strings.js:7
+msgid "Healthy"
+msgstr ""
+
+#: i18n/extracted-strings.js:8
+msgid "Degraded"
+msgstr ""
+
+#: i18n/extracted-strings.js:9
+msgid "Failing"
+msgstr ""
+
+#: i18n/extracted-strings.js:10
+msgid "Not enough data"
+msgstr ""
+
+#: i18n/extracted-strings.js:11
+msgid "never"
+msgstr ""
+
+#: i18n/extracted-strings.js:12
+msgid "Your setup looks ready to send email."
+msgstr ""
+
+#: i18n/extracted-strings.js:13
+msgid "Email can still send, but some things should be improved."
+msgstr ""
+
+#: i18n/extracted-strings.js:14
+msgid "Something is likely to stop or degrade your email delivery."
+msgstr ""
+
+#: i18n/extracted-strings.js:15
+msgid "Run the checks to see whether your setup is ready."
+msgstr ""
+
+#: i18n/extracted-strings.js:16
+msgid "Last checked: %s."
+msgstr ""
+
+#: i18n/extracted-strings.js:17
+msgid "This report may be out of date; run the checks for a fresh result."
+msgstr ""
+
+#: i18n/extracted-strings.js:18
+msgid "%1$d sent, %2$d failed (%3$s failure rate)"
+msgstr ""
+
+#: i18n/extracted-strings.js:19
+msgid "No emails have been sent in the last 30 days."
+msgstr ""
+
+#: i18n/extracted-strings.js:22
+msgid "Failure rate"
+msgstr ""
+
+#: i18n/extracted-strings.js:23
+msgid "By provider"
+msgstr ""
+
+#: i18n/extracted-strings.js:24
+msgid "These are your site's own send results, not the provider's published uptime."
+msgstr ""
+
+#: i18n/extracted-strings.js:25
+msgid "No failures recorded in the last 30 days."
+msgstr ""
+
+#: i18n/extracted-strings.js:26
+msgid "Select a cause to see the matching emails in the log."
+msgstr ""
+
+#: i18n/extracted-strings.js:27
+msgid "Health checks refreshed."
+msgstr ""
+
+#: i18n/extracted-strings.js:28
+msgid "Could not run the checks."
+msgstr ""
+
+#: i18n/extracted-strings.js:29
+msgid "Can WordPress send email right now?"
+msgstr ""
+
+#: i18n/extracted-strings.js:30
+msgid "Checking…"
+msgstr ""
+
+#: i18n/extracted-strings.js:31
+msgid "Run checks"
+msgstr ""
+
+#: i18n/extracted-strings.js:32
+#: i18n/extracted-strings.js:35
+#: i18n/extracted-strings.js:132
+#: i18n/extracted-strings.js:133
+#: i18n/extracted-strings.js:156
+msgid "Loading…"
+msgstr ""
+
+#: i18n/extracted-strings.js:33
+msgid "Failed to load the health report."
+msgstr ""
+
+#: i18n/extracted-strings.js:34
+msgid "Are your emails actually being delivered?"
+msgstr ""
+
+#: i18n/extracted-strings.js:36
+msgid "Failed to load delivery metrics."
+msgstr ""
+
+#: i18n/extracted-strings.js:37
+msgid "When something fails, what is the cause?"
+msgstr ""
+
+#: i18n/extracted-strings.js:38
+msgid "All plugin data was removed."
+msgstr ""
+
+#: i18n/extracted-strings.js:39
+msgid "Reset failed: "
+msgstr ""
+
+#: i18n/extracted-strings.js:40
+#: i18n/extracted-strings.js:82
+msgid "Reset all data"
+msgstr ""
+
+#: i18n/extracted-strings.js:41
+msgid "Deletes all settings and drops the email log, open, and click tables. This cannot be undone."
+msgstr ""
+
+#: i18n/extracted-strings.js:42
+#: i18n/extracted-strings.js:48
+msgid "Reset everything"
+msgstr ""
+
+#: i18n/extracted-strings.js:43
+msgid "Reset all Flexa MailBridge data?"
+msgstr ""
+
+#: i18n/extracted-strings.js:44
+msgid "This permanently deletes your settings and every logged email. Type RESET to confirm."
+msgstr ""
+
+#: i18n/extracted-strings.js:45
+msgid "Confirmation"
+msgstr ""
+
+#: i18n/extracted-strings.js:46
+msgid "Cancel"
+msgstr ""
+
+#: i18n/extracted-strings.js:47
+msgid "Resetting…"
+msgstr ""
+
+#: i18n/extracted-strings.js:49
+#: i18n/extracted-strings.js:51
+msgid "Overview"
+msgstr ""
+
+#: i18n/extracted-strings.js:50
+msgid "Delivery at a glance"
+msgstr ""
+
+#: i18n/extracted-strings.js:52
+msgid "The three questions that tell you if email is working."
+msgstr ""
+
+#: i18n/extracted-strings.js:53
+#: i18n/extracted-strings.js:154
+#: i18n/extracted-strings.js:192
+msgid "Mailer"
+msgstr ""
+
+#: i18n/extracted-strings.js:54
+msgid "Sender and delivery service"
+msgstr ""
+
+#: i18n/extracted-strings.js:55
+msgid "Mailer Settings"
+msgstr ""
+
+#: i18n/extracted-strings.js:56
+msgid "Choose how your site sends email and who it's from."
+msgstr ""
+
+#: i18n/extracted-strings.js:57
+#: i18n/extracted-strings.js:59
+msgid "Delivery Queue"
+msgstr ""
+
+#: i18n/extracted-strings.js:58
+msgid "Background send and retry"
+msgstr ""
+
+#: i18n/extracted-strings.js:60
+msgid "Send email in the background and retry temporary failures."
+msgstr ""
+
+#: i18n/extracted-strings.js:61
+#: i18n/extracted-strings.js:63
+msgid "Email Logs"
+msgstr ""
+
+#: i18n/extracted-strings.js:62
+msgid "Every message sent"
+msgstr ""
+
+#: i18n/extracted-strings.js:64
+msgid "Browse, search, and export logged emails."
+msgstr ""
+
+#: i18n/extracted-strings.js:65
+#: i18n/extracted-strings.js:67
+msgid "Tracking"
+msgstr ""
+
+#: i18n/extracted-strings.js:66
+msgid "Opens and clicks"
+msgstr ""
+
+#: i18n/extracted-strings.js:68
+msgid "Measure how recipients engage with your emails."
+msgstr ""
+
+#: i18n/extracted-strings.js:69
+#: i18n/extracted-strings.js:71
+msgid "Reports"
+msgstr ""
+
+#: i18n/extracted-strings.js:70
+msgid "Delivery trends"
+msgstr ""
+
+#: i18n/extracted-strings.js:72
+msgid "Charts and summaries of your email activity."
+msgstr ""
+
+#: i18n/extracted-strings.js:73
+#: i18n/extracted-strings.js:75
+#: i18n/extracted-strings.js:111
+msgid "Import"
+msgstr ""
+
+#: i18n/extracted-strings.js:74
+msgid "From other plugins"
+msgstr ""
+
+#: i18n/extracted-strings.js:76
+msgid "Bring settings and logs over from another SMTP plugin."
+msgstr ""
+
+#: i18n/extracted-strings.js:77
+msgid "Additional"
+msgstr ""
+
+#: i18n/extracted-strings.js:78
+msgid "Developer options"
+msgstr ""
+
+#: i18n/extracted-strings.js:79
+msgid "Additional Settings"
+msgstr ""
+
+#: i18n/extracted-strings.js:80
+msgid "Extra controls for testing and development."
+msgstr ""
+
+#: i18n/extracted-strings.js:81
+#: i18n/extracted-strings.js:83
+msgid "Danger Zone"
+msgstr ""
+
+#: i18n/extracted-strings.js:84
+msgid "Irreversible actions — proceed with care."
+msgstr ""
+
+#: i18n/extracted-strings.js:85
+msgid "Loading settings…"
+msgstr ""
+
+#: i18n/extracted-strings.js:86
+msgid "Failed to load settings:"
+msgstr ""
+
+#: i18n/extracted-strings.js:87
+msgid "Settings saved."
+msgstr ""
+
+#: i18n/extracted-strings.js:88
+#: i18n/extracted-strings.js:94
+msgid "Save failed."
+msgstr ""
+
+#: i18n/extracted-strings.js:90
+msgid "for WordPress"
+msgstr ""
+
+#: i18n/extracted-strings.js:92
+msgid "Configure how WordPress sends, logs, and tracks email."
+msgstr ""
+
+#: i18n/extracted-strings.js:93
+msgid "Saved."
+msgstr ""
+
+#: i18n/extracted-strings.js:95
+msgid "Saving…"
+msgstr ""
+
+#: i18n/extracted-strings.js:96
+msgid "Save Settings"
+msgstr ""
+
+#: i18n/extracted-strings.js:97
+msgid "Pause Email Delivery"
+msgstr ""
+
+#: i18n/extracted-strings.js:98
+msgid "Development mode: stop sending real email. Messages are still logged so you can inspect them."
+msgstr ""
+
+#: i18n/extracted-strings.js:99
+msgid "Settings + logs"
+msgstr ""
+
+#: i18n/extracted-strings.js:100
+msgid "Settings only"
+msgstr ""
+
+#: i18n/extracted-strings.js:101
+msgid "Logs only"
+msgstr ""
+
+#: i18n/extracted-strings.js:102
+msgid "settings imported"
+msgstr ""
+
+#: i18n/extracted-strings.js:103
+msgid "%d log(s) imported"
+msgstr ""
+
+#: i18n/extracted-strings.js:104
+msgid "logs already imported"
+msgstr ""
+
+#: i18n/extracted-strings.js:105
+msgid "nothing to import"
+msgstr ""
+
+#: i18n/extracted-strings.js:106
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: i18n/extracted-strings.js:107
+msgid "Could not import from %s."
+msgstr ""
+
+#: i18n/extracted-strings.js:108
+msgid "Logs already imported once."
+msgstr ""
+
+#: i18n/extracted-strings.js:109
+msgid "What to import"
+msgstr ""
+
+#: i18n/extracted-strings.js:110
+msgid "Importing…"
+msgstr ""
+
+#: i18n/extracted-strings.js:112
+msgid "Migrate your configuration and email logs from another SMTP plugin. Importing settings merges over your current Flexa MailBridge settings; secrets are re-encrypted on import."
+msgstr ""
+
+#: i18n/extracted-strings.js:113
+msgid "Detecting other plugins…"
+msgstr ""
+
+#: i18n/extracted-strings.js:114
+msgid "Failed to detect importable plugins."
+msgstr ""
+
+#: i18n/extracted-strings.js:115
+msgid "No other SMTP plugins with importable data were found."
+msgstr ""
+
+#: i18n/extracted-strings.js:118
+msgid "Pending"
+msgstr ""
+
+#: i18n/extracted-strings.js:119
+msgid "Why it failed"
+msgstr ""
+
+#: i18n/extracted-strings.js:120
+msgid "Safe to retry"
+msgstr ""
+
+#: i18n/extracted-strings.js:121
+msgid "Do not auto-retry"
+msgstr ""
+
+#: i18n/extracted-strings.js:122
+msgid "What to do:"
+msgstr ""
+
+#: i18n/extracted-strings.js:123
+msgid "Response code"
+msgstr ""
+
+#: i18n/extracted-strings.js:124
+msgid "Provider message ID"
+msgstr ""
+
+#: i18n/extracted-strings.js:125
+msgid "Send duration"
+msgstr ""
+
+#: i18n/extracted-strings.js:126
+msgid "%d ms"
+msgstr ""
+
+#: i18n/extracted-strings.js:127
+msgid "Retry count"
+msgstr ""
+
+#: i18n/extracted-strings.js:128
+msgid "Source"
+msgstr ""
+
+#: i18n/extracted-strings.js:129
+msgid "Content type"
+msgstr ""
+
+#: i18n/extracted-strings.js:130
+msgid "Technical details"
+msgstr ""
+
+#: i18n/extracted-strings.js:131
+msgid "Email details"
+msgstr ""
+
+#: i18n/extracted-strings.js:134
+msgid "via"
+msgstr ""
+
+#: i18n/extracted-strings.js:135
+#: i18n/extracted-strings.js:246
+msgid "Recipients"
+msgstr ""
+
+#: i18n/extracted-strings.js:136
+msgid "%d opens"
+msgstr ""
+
+#: i18n/extracted-strings.js:137
+msgid "%d links clicked"
+msgstr ""
+
+#: i18n/extracted-strings.js:138
+msgid "%d×"
+msgstr ""
+
+#: i18n/extracted-strings.js:139
+msgid "Body"
+msgstr ""
+
+#: i18n/extracted-strings.js:140
+msgid "All mailers"
+msgstr ""
+
+#: i18n/extracted-strings.js:141
+msgid "All causes"
+msgstr ""
+
+#: i18n/extracted-strings.js:142
+msgid "Enable Email Log"
+msgstr ""
+
+#: i18n/extracted-strings.js:143
+msgid "Record every email WordPress sends through this site."
+msgstr ""
+
+#: i18n/extracted-strings.js:144
+msgid "Log Retention (days)"
+msgstr ""
+
+#: i18n/extracted-strings.js:145
+msgid "Automatically delete logs older than this. 0 keeps them forever."
+msgstr ""
+
+#: i18n/extracted-strings.js:146
+msgid "Search subject, from, or to…"
+msgstr ""
+
+#: i18n/extracted-strings.js:147
+msgid "All statuses"
+msgstr ""
+
+#: i18n/extracted-strings.js:150
+msgid "Export CSV"
+msgstr ""
+
+#: i18n/extracted-strings.js:151
+msgid "Status"
+msgstr ""
+
+#: i18n/extracted-strings.js:152
+msgid "Subject"
+msgstr ""
+
+#: i18n/extracted-strings.js:153
+msgid "To"
+msgstr ""
+
+#: i18n/extracted-strings.js:155
+msgid "Date"
+msgstr ""
+
+#: i18n/extracted-strings.js:157
+msgid "No emails logged yet."
+msgstr ""
+
+#: i18n/extracted-strings.js:158
+msgid "View"
+msgstr ""
+
+#: i18n/extracted-strings.js:159
+msgid "%d emails"
+msgstr ""
+
+#: i18n/extracted-strings.js:160
+msgid "Previous"
+msgstr ""
+
+#: i18n/extracted-strings.js:161
+msgid "Page %1$d of %2$d"
+msgstr ""
+
+#: i18n/extracted-strings.js:162
+msgid "Next"
+msgstr ""
+
+#: i18n/extracted-strings.js:163
+msgid "Could not start the connection: "
+msgstr ""
+
+#: i18n/extracted-strings.js:164
+msgid "Disconnected."
+msgstr ""
+
+#: i18n/extracted-strings.js:165
+msgid "Disconnect failed: "
+msgstr ""
+
+#: i18n/extracted-strings.js:166
+msgid "Connection"
+msgstr ""
+
+#: i18n/extracted-strings.js:167
+msgid "This account is connected and ready to send."
+msgstr ""
+
+#: i18n/extracted-strings.js:168
+msgid "Authorize this provider to allow sending mail."
+msgstr ""
+
+#: i18n/extracted-strings.js:169
+msgid "Connected"
+msgstr ""
+
+#: i18n/extracted-strings.js:170
+msgid "Not connected"
+msgstr ""
+
+#: i18n/extracted-strings.js:171
+msgid "Disconnect"
+msgstr ""
+
+#: i18n/extracted-strings.js:172
+msgid "Redirecting…"
+msgstr ""
+
+#: i18n/extracted-strings.js:173
+msgid "Connect"
+msgstr ""
+
+#: i18n/extracted-strings.js:174
+msgid "Enter a recipient email address first."
+msgstr ""
+
+#: i18n/extracted-strings.js:175
+msgid "Test email sent."
+msgstr ""
+
+#: i18n/extracted-strings.js:176
+msgid "Test email failed."
+msgstr ""
+
+#: i18n/extracted-strings.js:177
+msgid "Test email failed: "
+msgstr ""
+
+#: i18n/extracted-strings.js:178
+msgid "Send a test email"
+msgstr ""
+
+#: i18n/extracted-strings.js:179
+msgid "Test recipient"
+msgstr ""
+
+#: i18n/extracted-strings.js:180
+msgid "Sends through your saved mailer settings. Save any changes first."
+msgstr ""
+
+#: i18n/extracted-strings.js:181
+#: i18n/extracted-strings.js:250
+msgid "Sending…"
+msgstr ""
+
+#: i18n/extracted-strings.js:182
+msgid "Send test"
+msgstr ""
+
+#: i18n/extracted-strings.js:183
+msgid "Sent through %s. Check the inbox."
+msgstr ""
+
+#: i18n/extracted-strings.js:184
+msgid "From Email"
+msgstr ""
+
+#: i18n/extracted-strings.js:185
+msgid "The address outgoing mail is sent from."
+msgstr ""
+
+#: i18n/extracted-strings.js:186
+msgid "Force From Email"
+msgstr ""
+
+#: i18n/extracted-strings.js:187
+msgid "Use the address above even if a plugin sets its own."
+msgstr ""
+
+#: i18n/extracted-strings.js:188
+msgid "From Name"
+msgstr ""
+
+#: i18n/extracted-strings.js:189
+msgid "The sender name shown to recipients."
+msgstr ""
+
+#: i18n/extracted-strings.js:190
+msgid "Force From Name"
+msgstr ""
+
+#: i18n/extracted-strings.js:191
+msgid "Use the name above even if a plugin sets its own."
+msgstr ""
+
+#: i18n/extracted-strings.js:193
+msgid "The service that delivers your email."
+msgstr ""
+
+#: i18n/extracted-strings.js:194
+msgid "Enable Fallback"
+msgstr ""
+
+#: i18n/extracted-strings.js:195
+msgid "Try a second mailer if the primary one fails."
+msgstr ""
+
+#: i18n/extracted-strings.js:196
+msgid "Fallback Mailer"
+msgstr ""
+
+#: i18n/extracted-strings.js:197
+msgid "Used only when the primary fails."
+msgstr ""
+
+#: i18n/extracted-strings.js:198
+msgid "— None —"
+msgstr ""
+
+#: i18n/extracted-strings.js:199
+msgid "Nothing scheduled"
+msgstr ""
+
+#: i18n/extracted-strings.js:200
+msgid "Loading queue status…"
+msgstr ""
+
+#: i18n/extracted-strings.js:201
+msgid "Waiting"
+msgstr ""
+
+#: i18n/extracted-strings.js:202
+msgid "In progress"
+msgstr ""
+
+#: i18n/extracted-strings.js:204
+msgid "Due now"
+msgstr ""
+
+#: i18n/extracted-strings.js:205
+msgid "Runner: Action Scheduler"
+msgstr ""
+
+#: i18n/extracted-strings.js:206
+msgid "Runner: WP-Cron"
+msgstr ""
+
+#: i18n/extracted-strings.js:207
+msgid "Next run:"
+msgstr ""
+
+#: i18n/extracted-strings.js:208
+msgid "Process now"
+msgstr ""
+
+#: i18n/extracted-strings.js:209
+msgid "Retry failed"
+msgstr ""
+
+#: i18n/extracted-strings.js:210
+msgid "Clear failed"
+msgstr ""
+
+#: i18n/extracted-strings.js:211
+msgid "Send email in the background"
+msgstr ""
+
+#: i18n/extracted-strings.js:212
+msgid "Hand each message to a queue and deliver it out of band instead of during the page request. Off by default: with it on, wp_mail() returns true once a message is queued, before it actually goes out."
+msgstr ""
+
+#: i18n/extracted-strings.js:213
+msgid "Retry failed sends"
+msgstr ""
+
+#: i18n/extracted-strings.js:214
+msgid "Automatically try again after a temporary failure (timeouts, rate limits, 4xx server errors) using exponential backoff. Permanent errors like a bad recipient or authentication failure are never retried."
+msgstr ""
+
+#: i18n/extracted-strings.js:215
+msgid "Maximum attempts"
+msgstr ""
+
+#: i18n/extracted-strings.js:216
+msgid "Total delivery attempts per message before it is marked failed (including the first)."
+msgstr ""
+
+#: i18n/extracted-strings.js:217
+msgid "Queue status"
+msgstr ""
+
+#: i18n/extracted-strings.js:218
+msgid "The queue runs through Action Scheduler when your site has it (most WooCommerce sites do) and falls back to WP-Cron otherwise. A timeout does not always mean the email failed, so a retried message can in rare cases be delivered twice; leave retries off if that matters for your mail."
+msgstr ""
+
+#: i18n/extracted-strings.js:219
+msgid "You can view the queue but need the settings capability to change these options or run the worker."
+msgstr ""
+
+#: i18n/extracted-strings.js:220
+msgid "Daily email activity"
+msgstr ""
+
+#: i18n/extracted-strings.js:230
+msgid "Daily activity"
+msgstr ""
+
+#: i18n/extracted-strings.js:231
+msgid "By mailer"
+msgstr ""
+
+#: i18n/extracted-strings.js:232
+msgid "No sends in this period."
+msgstr ""
+
+#: i18n/extracted-strings.js:234
+msgid "No clicks in this period."
+msgstr ""
+
+#: i18n/extracted-strings.js:235
+msgid "Test digest sent to %s."
+msgstr ""
+
+#: i18n/extracted-strings.js:236
+msgid "No recipients configured."
+msgstr ""
+
+#: i18n/extracted-strings.js:237
+msgid "Could not send digest."
+msgstr ""
+
+#: i18n/extracted-strings.js:238
+msgid "%d days"
+msgstr ""
+
+#: i18n/extracted-strings.js:239
+msgid "Loading report…"
+msgstr ""
+
+#: i18n/extracted-strings.js:240
+msgid "Failed to load report."
+msgstr ""
+
+#: i18n/extracted-strings.js:241
+msgid "Scheduled digests"
+msgstr ""
+
+#: i18n/extracted-strings.js:242
+msgid "Weekly report"
+msgstr ""
+
+#: i18n/extracted-strings.js:243
+msgid "Email a summary once a week."
+msgstr ""
+
+#: i18n/extracted-strings.js:244
+msgid "Monthly report"
+msgstr ""
+
+#: i18n/extracted-strings.js:245
+msgid "Email a summary once a month."
+msgstr ""
+
+#: i18n/extracted-strings.js:247
+msgid "Comma-separated email addresses. Defaults to the site admin."
+msgstr ""
+
+#: i18n/extracted-strings.js:248
+msgid "Send a test digest"
+msgstr ""
+
+#: i18n/extracted-strings.js:249
+msgid "Send the current period's report to the recipients now."
+msgstr ""
+
+#: i18n/extracted-strings.js:251
+msgid "Send now"
+msgstr ""
+
+#: i18n/extracted-strings.js:252
+msgid "Email logging is off. Tracking needs a log entry to attach opens and clicks to, so enable logging on the Email Logs tab first."
+msgstr ""
+
+#: i18n/extracted-strings.js:253
+msgid "Open Tracking"
+msgstr ""
+
+#: i18n/extracted-strings.js:254
+msgid "Add an invisible pixel to HTML emails to record when they are opened."
+msgstr ""
+
+#: i18n/extracted-strings.js:255
+msgid "Click Tracking"
+msgstr ""
+
+#: i18n/extracted-strings.js:256
+msgid "Rewrite links in HTML emails to record which ones recipients click."
+msgstr ""
