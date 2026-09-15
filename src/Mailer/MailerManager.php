@@ -46,6 +46,9 @@ final class MailerManager {
 		}
 
 		if ( ! class_exists( PHPMailer::class ) ) {
+			// Loads WordPress core's bundled PHPMailer. ABSPATH . WPINC is the
+			// canonical (and only) path to it — core itself includes it this way
+			// in wp-includes/pluggable.php; there is no wrapper function to use.
 			require_once ABSPATH . WPINC . '/PHPMailer/PHPMailer.php';
 			require_once ABSPATH . WPINC . '/PHPMailer/SMTP.php';
 			require_once ABSPATH . WPINC . '/PHPMailer/Exception.php';

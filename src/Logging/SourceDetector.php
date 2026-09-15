@@ -23,6 +23,9 @@ final class SourceDetector {
 		}
 
 		$self       = wp_normalize_path( FLEXA_MAILBRIDGE_PATH );
+		// WP_PLUGIN_DIR is needed to match a backtrace file path against the
+		// plugins root and attribute the mail to its source plugin; no WP
+		// function returns the plugins directory root.
 		$plugin_dir = wp_normalize_path( WP_PLUGIN_DIR );
 		$mu_dir     = defined( 'WPMU_PLUGIN_DIR' ) ? wp_normalize_path( WPMU_PLUGIN_DIR ) : '';
 		$theme_root = wp_normalize_path( get_theme_root() );
