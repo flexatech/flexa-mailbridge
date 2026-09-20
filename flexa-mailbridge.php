@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Flexa MailBridge
  * Description:       WP Mail SMTP with email logs, open/click tracking, and reports.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.2
  * Requires PHP:      8.2
  * Author:            FlexaTech
@@ -28,7 +28,7 @@ if ( version_compare( PHP_VERSION, '8.2', '<' ) ) {
 	return;
 }
 
-define( 'FLEXA_MAILBRIDGE_VERSION', '1.0.0' );
+define( 'FLEXA_MAILBRIDGE_VERSION', '1.0.1' );
 define( 'FLEXA_MAILBRIDGE_FILE', __FILE__ );
 define( 'FLEXA_MAILBRIDGE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FLEXA_MAILBRIDGE_URL', plugin_dir_url( __FILE__ ) );

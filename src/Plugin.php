@@ -23,6 +23,12 @@ final class Plugin {
 		// had just-in-time textdomain loading since WP 4.6, so no explicit
 		// load_plugin_textdomain() call is needed here.
 
+		// Deactivation feedback survey (Plugins screen only, best-effort, never
+		// blocks deactivation).
+		if ( class_exists( Support\DeactivationSurvey::class ) ) {
+			Support\DeactivationSurvey::instance()->register();
+		}
+
 		if ( class_exists( Database\Schema::class ) ) {
 			add_action( 'admin_init', [ Database\Schema::class, 'maybe_upgrade' ] );
 		}
