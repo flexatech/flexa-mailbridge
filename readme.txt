@@ -4,7 +4,7 @@ Tags: smtp, wp mail smtp, email log, email tracking, email delivery
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,10 @@ An email delivery layer for WordPress: route wp_mail() through any SMTP or API m
 Flexa MailBridge is the email delivery layer for your WordPress site. It sits between `wp_mail()` and your mail provider, so every message your site sends (order emails, password resets, form notifications, newsletters) goes out through a real mailer instead of the default `mail()` that so often lands in spam.
 
 Around that core it adds the parts a dependable delivery pipeline needs: a fallback mailer for when the primary one fails, an optional background queue that retries temporary failures, a full log of everything sent, open and click tracking, and delivery reports.
+
+= Dashboard =
+
+The landing screen pulls everything together in one view: whether WordPress can send email right now, the last few days of delivery stats (sent, failed, open rate, click rate), an activity chart, your most recent sends, and the top reasons messages fail. Each panel links straight to the matching tab when you want the detail.
 
 = Routing and fallback =
 
@@ -133,7 +137,22 @@ Yes. Open/click tracking is recorded against the email log, so email logging mus
 
 Yes. See the WP-CLI commands listed in the description.
 
+== Screenshots ==
+
+1. Dashboard: email health, delivery stats, recent sends, and failure causes in one view.
+2. Mailer settings: pick a sending service, set the From name and address, and send a test.
+3. Delivery queue: send in the background and retry temporary failures.
+4. Email logs: every message sent, with search, filter, and CSV export.
+5. Tracking: measure opens and clicks per message.
+6. Reports: sent, opens, clicks, and open rate over time, with weekly and monthly summaries.
+7. Import: bring settings and logs over from another SMTP plugin.
+8. Additional: developer options, including pausing real sending while still logging.
+9. Danger Zone: reset all settings and drop the log tables for a clean start.
+
 == Changelog ==
+
+= 1.0.2 =
+* New: a Dashboard landing screen that brings email health, recent delivery stats, an activity chart, recent sends, and the top failure causes into one view, each linking to its full tab. The former Overview is now "Health check".
 
 = 1.0.1 =
 * New: an optional deactivation feedback survey. If you deactivate the plugin, a short survey asks why, so we know what to improve. It is entirely optional, admin-only, and never blocks or delays deactivation. See the External services section for exactly what is sent and how to turn it off.
