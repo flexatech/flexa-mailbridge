@@ -16,6 +16,16 @@ export interface FieldDef {
 /** slug => (field => definition), from Settings::mailer_schema(). */
 export type MailerSchema = Record<string, Record<string, FieldDef>>;
 
+/** FormFlow cross-promotion state, from Enqueue::formflow_promo(). */
+export interface FormFlowPromo {
+    /** Already accounts for capability, dismissal, and FormFlow being installed. */
+    show: boolean;
+    /** One-click install link, or "" when the user may not install plugins. */
+    installUrl: string;
+    learnMoreUrl: string;
+    iconUrl: string;
+}
+
 export interface PluginGlobal {
     restUrl: string;
     restNonce: string;
@@ -31,6 +41,8 @@ export interface PluginGlobal {
     schema: MailerSchema;
     /** Sentinel a secret field echoes back when left unedited. */
     secretMask: string;
+    /** Cross-promotion banner state; absent on older bundles. */
+    formFlow?: FormFlowPromo;
 }
 
 declare global {

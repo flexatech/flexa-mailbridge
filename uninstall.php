@@ -18,6 +18,8 @@ global $wpdb;
 delete_option( 'flexa_mailbridge_settings' );
 delete_option( 'flexa_mailbridge_db_version' );
 delete_option( 'flexa_mailbridge_health_report' );
+delete_option( 'flexa_mailbridge_import_notice_dismissed' );
+delete_option( 'flexa_mailbridge_formflow_notice_dismissed' );
 
 $flexa_mailbridge_tables = [
 	'flexa_mailbridge_email_logs',

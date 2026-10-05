@@ -19,6 +19,7 @@ import { useUiStore } from "@/lib/store";
 import { getPluginGlobal } from "@/lib/wp";
 import { DashboardTab } from "@/features/dashboard/DashboardTab";
 import { OverviewTab } from "@/features/overview/OverviewTab";
+import { FormFlowBanner } from "@/features/promo/FormFlowBanner";
 import { DangerZone } from "./DangerZone";
 import { NavItem, PaneHeader, type SectionMeta } from "./SettingRow";
 import { MailerTab } from "./tabs/MailerTab";
@@ -259,6 +260,8 @@ export function SettingsPage() {
           </div>
         </div>
       </div>
+
+      <FormFlowBanner />
 
       {/* Page header */}
       <div className="fs:mx-auto fs:flex fs:max-w-none fs:flex-wrap fs:items-start fs:justify-between fs:gap-4 fs:px-6 fs:pt-8 fs:pb-6">

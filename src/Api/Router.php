@@ -35,6 +35,7 @@ final class Router {
 		( new ResetEndpoint() )->register_routes();
 		( new ReportsEndpoint() )->register_routes();
 		( new ImportEndpoint() )->register_routes();
+		( new PromoEndpoint() )->register_routes();
 
 		do_action( 'flexa_mailbridge.rest.register_routes' );
 	}

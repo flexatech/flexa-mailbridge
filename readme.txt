@@ -4,7 +4,7 @@ Tags: smtp, wp mail smtp, email log, email tracking, email delivery
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -150,6 +150,9 @@ Yes. See the WP-CLI commands listed in the description.
 9. Danger Zone: reset all settings and drop the log tables for a clean start.
 
 == Changelog ==
+
+= 1.0.3 =
+* New: an introduction to Flexa FormFlow, our free form builder with a visual email designer and workflows built in. It shows as a Dashboard notice and as a banner on the MailBridge screen, only if FormFlow is not already installed. Dismissing either one hides both for good.
 
 = 1.0.2 =
 * New: a Dashboard landing screen that brings email health, recent delivery stats, an activity chart, recent sends, and the top failure causes into one view, each linking to its full tab. The former Overview is now "Health check".

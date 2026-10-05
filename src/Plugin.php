@@ -82,6 +82,9 @@ final class Plugin {
 			if ( class_exists( Admin\ImportNotice::class ) ) {
 				Admin\ImportNotice::instance()->register();
 			}
+			if ( class_exists( Admin\FormFlowNotice::class ) ) {
+				Admin\FormFlowNotice::instance()->register();
+			}
 		}
 
 		// WP7+ services (Reports\Scheduler, …) register here behind

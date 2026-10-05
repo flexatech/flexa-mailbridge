@@ -53,8 +53,27 @@ final class Enqueue {
 				'canManageSettings' => Capabilities::can_manage_settings(),
 				'schema'            => Settings::mailer_schema(),
 				'secretMask'        => Settings::SECRET_MASK,
+				'formFlow'          => $this->formflow_promo(),
 			]
 		);
+	}
+
+	/**
+	 * Data for the FormFlow cross-promotion banner. `show` already carries the
+	 * capability, dismissal and "already installed" checks, so the app only has
+	 * to honour it.
+	 *
+	 * @return array{show: bool, installUrl: string, learnMoreUrl: string, iconUrl: string}
+	 */
+	private function formflow_promo(): array {
+		$show = FormFlowPromo::should_show();
+
+		return [
+			'show'         => $show,
+			'installUrl'   => $show ? FormFlowPromo::install_url() : '',
+			'learnMoreUrl' => FormFlowPromo::WPORG_URL,
+			'iconUrl'      => esc_url_raw( FormFlowPromo::icon_url() ),
+		];
 	}
 
 	private function detect_admin_theme(): string {
