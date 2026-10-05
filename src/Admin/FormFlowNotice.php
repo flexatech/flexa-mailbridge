@@ -95,11 +95,22 @@ final class FormFlowNotice {
 				} );
 			} )();"
 		);
+
+		/**
+		 * Claim the Dashboard slot so a sibling Flexa plugin running later on
+		 * this same hook does not print a second copy of the pitch.
+		 */
+		do_action( FormFlowPromo::RENDERED_ACTION );
 	}
 
 	private function should_render(): bool {
 		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
 		if ( ! $screen instanceof \WP_Screen || 'dashboard' !== $screen->id ) {
+			return false;
+		}
+
+		// Another Flexa plugin already showed it on this page load.
+		if ( did_action( FormFlowPromo::RENDERED_ACTION ) > 0 ) {
 			return false;
 		}
 

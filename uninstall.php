@@ -20,6 +20,9 @@ delete_option( 'flexa_mailbridge_db_version' );
 delete_option( 'flexa_mailbridge_health_report' );
 delete_option( 'flexa_mailbridge_import_notice_dismissed' );
 delete_option( 'flexa_mailbridge_formflow_notice_dismissed' );
+// The shared 'flexa_formflow_promo_dismissed' flag is left in place on purpose:
+// other Flexa plugins read it, and removing this one must not bring back a
+// suggestion the user already turned down.
 
 $flexa_mailbridge_tables = [
 	'flexa_mailbridge_email_logs',

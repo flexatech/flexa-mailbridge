@@ -15,10 +15,31 @@ defined( 'ABSPATH' ) || exit;
  * from here, so the detection logic and the dismissal flag can never drift.
  */
 final class FormFlowPromo {
-	public const SLUG             = 'flexa-formflow';
-	public const WPORG_URL        = 'https://wordpress.org/plugins/flexa-formflow/';
+	public const SLUG           = 'flexa-formflow';
+	public const WPORG_URL      = 'https://wordpress.org/plugins/flexa-formflow/';
+	public const DISMISS_ACTION = 'flexa_mailbridge_dismiss_formflow';
+
+	/**
+	 * Per-plugin dismissal flag written by 1.0.3 and earlier. Still read, so a
+	 * user who already said no back then is not asked a second time.
+	 */
 	public const DISMISSED_OPTION = 'flexa_mailbridge_formflow_notice_dismissed';
-	public const DISMISS_ACTION   = 'flexa_mailbridge_dismiss_formflow';
+
+	/**
+	 * Dismissal flag shared by every Flexa plugin, which is why it carries no
+	 * plugin namespace. One "no" retires the FormFlow pitch site-wide. It is
+	 * deliberately left behind on uninstall: removing one Flexa plugin must not
+	 * resurrect a suggestion the user already turned down elsewhere.
+	 */
+	public const SHARED_DISMISSED_OPTION = 'flexa_formflow_promo_dismissed';
+
+	/**
+	 * Fired by whichever Flexa plugin prints the Dashboard notice first; the
+	 * others check it and stay quiet, so two installed Flexa plugins never
+	 * stack two near-identical cards. The string is shared verbatim between
+	 * plugins, hence the slash style rather than this plugin's dot style.
+	 */
+	public const RENDERED_ACTION = 'flexa_formflow_promo/rendered';
 
 	/**
 	 * A single dismissal covers every surface: someone who said no on the
@@ -37,10 +58,16 @@ final class FormFlowPromo {
 	}
 
 	public static function is_dismissed(): bool {
-		return (bool) get_option( self::DISMISSED_OPTION );
+		return (bool) get_option( self::SHARED_DISMISSED_OPTION )
+			|| (bool) get_option( self::DISMISSED_OPTION );
 	}
 
+	/**
+	 * Both keys are written: the shared one so sibling Flexa plugins honour the
+	 * choice, the legacy one so a downgrade to 1.0.3 still reads it.
+	 */
 	public static function dismiss(): void {
+		update_option( self::SHARED_DISMISSED_OPTION, 1 );
 		update_option( self::DISMISSED_OPTION, 1 );
 	}
 

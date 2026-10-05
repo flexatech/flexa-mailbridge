@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# Build a production zip of flexa-mailbridge into ./build/.
+# Build a production zip of flexa-mailbridge into ./dist/.
 set -euo pipefail
 
 PLUGIN_SLUG="flexa-mailbridge"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BUILD_DIR="${ROOT_DIR}/build"
-STAGE_DIR="${BUILD_DIR}/${PLUGIN_SLUG}"
+DIST_DIR="${ROOT_DIR}/dist"
+STAGE_ROOT="/tmp/${PLUGIN_SLUG}-release"
+STAGE_DIR="${STAGE_ROOT}/${PLUGIN_SLUG}"
 
 cd "${ROOT_DIR}"
 
@@ -29,10 +30,14 @@ if [[ -f package.json ]]; then
     fi
 fi
 
-# Stage.
-rm -rf "${BUILD_DIR}"
+# Stage outside the plugin so earlier zips in dist/ are left alone.
+rm -rf "${STAGE_ROOT}"
 mkdir -p "${STAGE_DIR}"
 
+# NOTE: the leading slash is stripped here, so every .distignore entry becomes
+# an UNANCHORED rsync pattern that matches at any depth. Never put "/dist" in
+# .distignore: it would also drop assets/dist/, the built bundle the plugin
+# needs to run. Anchored excludes belong on the rsync line below.
 EXCLUDES=()
 if [[ -f .distignore ]]; then
     while IFS= read -r line; do
@@ -44,13 +49,18 @@ if [[ -f .distignore ]]; then
     done < .distignore
 fi
 
-rsync -a "${EXCLUDES[@]}" --exclude="build" --exclude=".git" "${ROOT_DIR}/" "${STAGE_DIR}/"
+# These three are anchored with a leading slash on purpose: assets/dist/ holds
+# the built bundle and has to ship, so a bare "dist" would gut the plugin.
+rsync -a "${EXCLUDES[@]}" --exclude="/build" --exclude="/dist" --exclude="/.git" "${ROOT_DIR}/" "${STAGE_DIR}/"
 
-cd "${BUILD_DIR}"
-ZIP_NAME="${PLUGIN_SLUG}-${VERSION}.zip"
-rm -f "${ZIP_NAME}"
-zip -rq "${ZIP_NAME}" "${PLUGIN_SLUG}"
-echo "Built ${BUILD_DIR}/${ZIP_NAME}"
+mkdir -p "${DIST_DIR}"
+ZIP_PATH="${DIST_DIR}/${PLUGIN_SLUG}-${VERSION}.zip"
+rm -f "${ZIP_PATH}"
+cd "${STAGE_ROOT}"
+zip -rq "${ZIP_PATH}" "${PLUGIN_SLUG}"
 
-# Drop the staging tree - only the zip needs to stay in build/.
-rm -rf "${STAGE_DIR}"
+# Drop the staging tree - only the zip needs to stay.
+rm -rf "${STAGE_ROOT}"
+
+echo ""
+echo "Built ${ZIP_PATH}"
