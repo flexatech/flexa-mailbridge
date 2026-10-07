@@ -54,6 +54,13 @@ if ( file_exists( FLEXA_MAILBRIDGE_PATH . 'vendor/autoload.php' ) ) {
 	);
 }
 
+// Deactivation Intelligence SDK. Offered here, at file-load time, rather than
+// from the boot sequence: the SDK is a single global class shared by every
+// Flexa plugin on the site, and its loader picks the newest bundled copy at
+// `plugins_loaded`, so a copy registered later than that has already lost the
+// vote. The survey's own config is set up in Support\DeactivationSurvey.
+\Flexa\MailBridge\Support\DeactivationSurvey::preload();
+
 register_activation_hook( __FILE__, [ \Flexa\MailBridge\Setup\Activator::class, 'activate' ] );
 register_deactivation_hook( __FILE__, [ \Flexa\MailBridge\Setup\Deactivator::class, 'deactivate' ] );
 
