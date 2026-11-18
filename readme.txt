@@ -4,7 +4,7 @@ Tags: smtp, wp mail smtp, email log, email tracking, email delivery
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -150,6 +150,13 @@ Yes. See the WP-CLI commands listed in the description.
 9. Danger Zone: reset all settings and drop the log tables for a clean start.
 
 == Changelog ==
+
+= 1.0.5 =
+* Fix: the log CSV export marked every email that was not yet sent as "failed", including ones still waiting in the queue, being retried, or cancelled. Each row now shows its real status.
+* Fix: subjects, names, and error messages with accented or non-Latin characters no longer come out garbled when the CSV export is opened in Excel.
+* Improvement: `wp flexa-mailbridge log list --status` also accepts `queued`, `retrying`, and `cancelled`, and those statuses show by name instead of a number.
+* Improvement: the deactivation survey now includes a "Get help" link, so you can reach support before you decide to deactivate.
+* Under the hood: when several Flexa plugins are active, the newest bundled copy of the shared feedback library is the one that loads.
 
 = 1.0.4 =
 * Fix: with another Flexa plugin active, the FormFlow suggestion could show up twice on the Dashboard, and turning it down in one plugin left the other one still asking. Only one card appears now, and a single "not interested" retires the suggestion across every Flexa plugin you have installed.

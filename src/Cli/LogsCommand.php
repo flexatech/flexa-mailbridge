@@ -17,15 +17,6 @@ defined( 'ABSPATH' ) || exit;
  *     wp flexa-mailbridge log get <id>
  */
 final class LogsCommand {
-	/**
-	 * Human status names accepted on --status and shown in output.
-	 */
-	private const STATUS_TO_INT = [
-		'failed'  => EmailLog::STATUS_FAILED,
-		'sent'    => EmailLog::STATUS_SENT,
-		'pending' => EmailLog::STATUS_PENDING,
-	];
-
 	public static function register(): void {
 		if ( ! class_exists( WP_CLI::class ) ) {
 			return;
@@ -39,7 +30,8 @@ final class LogsCommand {
 	 * ## OPTIONS
 	 *
 	 * [--status=<status>]
-	 * : Filter by delivery status. One of sent, failed, pending (or 0/1/2).
+	 * : Filter by delivery status. One of sent, failed, pending, queued, retrying,
+	 * cancelled (or 0-5).
 	 *
 	 * [--mailer=<mailer>]
 	 * : Filter by the mailer slug that sent the message (e.g. smtp, sendgrid).
@@ -109,7 +101,7 @@ final class LogsCommand {
 				return [
 					'id'        => $log->id,
 					'date_time' => $log->date_time,
-					'status'    => self::STATUS_LABELS[ $log->status ] ?? (string) $log->status,
+					'status'    => $log->status_label(),
 					'mailer'    => $log->mailer,
 					'from'      => $log->email_from,
 					'to'        => implode( ', ', array_filter( $to ) ),
@@ -185,7 +177,7 @@ final class LogsCommand {
 			],
 			[
 				'field' => 'status',
-				'value' => self::STATUS_LABELS[ $log->status ] ?? (string) $log->status,
+				'value' => $log->status_label(),
 			],
 			[
 				'field' => 'mailer',
@@ -226,27 +218,19 @@ final class LogsCommand {
 	}
 
 	/**
-	 * Integer status -> human label.
-	 */
-	private const STATUS_LABELS = [
-		EmailLog::STATUS_FAILED  => 'failed',
-		EmailLog::STATUS_SENT    => 'sent',
-		EmailLog::STATUS_PENDING => 'pending',
-	];
-
-	/**
-	 * Accept either a name (sent/failed/pending) or a raw integer status.
+	 * Accept either a status name (see EmailLog::STATUS_LABELS) or a raw integer.
 	 */
 	private function resolve_status( string $status ): int {
-		$key = strtolower( trim( $status ) );
-		if ( isset( self::STATUS_TO_INT[ $key ] ) ) {
-			return self::STATUS_TO_INT[ $key ];
+		$key     = strtolower( trim( $status ) );
+		$by_name = array_flip( EmailLog::STATUS_LABELS );
+		if ( isset( $by_name[ $key ] ) ) {
+			return $by_name[ $key ];
 		}
 		if ( is_numeric( $status ) ) {
 			return (int) $status;
 		}
 
-		WP_CLI::error( sprintf( 'Unknown status "%s". Use sent, failed or pending.', $status ) );
+		WP_CLI::error( sprintf( 'Unknown status "%s". Use one of: %s.', $status, implode( ', ', EmailLog::STATUS_LABELS ) ) );
 
 		return EmailLog::STATUS_FAILED; // Unreachable: WP_CLI::error() halts execution.
 	}

@@ -155,7 +155,11 @@ final class LogsEndpoint extends Endpoint {
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen -- streaming a CSV download to the PHP output stream; WP_Filesystem cannot write to php://output.
 		$out = fopen( 'php://output', 'w' );
 		if ( false !== $out ) {
-			fputcsv( $out, [ 'ID', 'Date', 'Status', 'Mailer', 'From', 'To', 'Subject', 'Source', 'Error' ] );
+			// UTF-8 byte order mark: without it Excel reads the file as ANSI and
+			// garbles any non-ASCII subject, name, or error message.
+			fwrite( $out, "\xEF\xBB\xBF" ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fwrite -- writing to the php://output stream opened above.
+
+			fputcsv( $out, [ 'ID', 'Date', 'Status', 'Mailer', 'From', 'To', 'Subject', 'Source', 'Error' ], ',', '"', '\\' );
 
 			foreach ( $rows as $log ) {
 				fputcsv(
@@ -165,7 +169,7 @@ final class LogsEndpoint extends Endpoint {
 						[
 							(string) $log->id,
 							$log->date_time,
-							EmailLog::STATUS_SENT === $log->status ? 'sent' : 'failed',
+							$log->status_label(),
 							$log->mailer,
 							$log->email_from,
 							$this->join_recipients( $log ),
@@ -173,7 +177,10 @@ final class LogsEndpoint extends Endpoint {
 							$log->source,
 							$log->reason_error,
 						]
-					)
+					),
+					',',
+					'"',
+					'\\'
 				);
 			}
 

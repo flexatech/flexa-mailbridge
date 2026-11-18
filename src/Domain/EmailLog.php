@@ -26,6 +26,19 @@ final class EmailLog {
 	public const STATUS_CANCELLED = 5;
 
 	/**
+	 * Integer status -> human label, shared by the CSV export and WP-CLI so a
+	 * queued or retrying row is never reported as failed.
+	 */
+	public const STATUS_LABELS = [
+		self::STATUS_FAILED    => 'failed',
+		self::STATUS_SENT      => 'sent',
+		self::STATUS_PENDING   => 'pending',
+		self::STATUS_QUEUED    => 'queued',
+		self::STATUS_RETRYING  => 'retrying',
+		self::STATUS_CANCELLED => 'cancelled',
+	];
+
+	/**
 	 * @param list<array{address:string, name:string}> $email_to
 	 * @param array<string, mixed>                     $extra_info
 	 */
@@ -76,6 +89,13 @@ final class EmailLog {
 			retry_count: (int) ( $row['retry_count'] ?? 0 ),
 			idempotency_key: (string) ( $row['idempotency_key'] ?? '' ),
 		);
+	}
+
+	/**
+	 * Human label for the status, or the raw integer for an unknown value.
+	 */
+	public function status_label(): string {
+		return self::STATUS_LABELS[ $this->status ] ?? (string) $this->status;
 	}
 
 	/**
